@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Victims {
-    private ArrayList<String> victims;
+    private final ArrayList<String> victims;
 
     public Victims() throws IOException {
         this.victims = new ArrayList<String>();

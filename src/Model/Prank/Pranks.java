@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 
 public class Pranks {
-    private ArrayList<String> prankList;
+    private ArrayList<Prank> prankList;
 
     public Pranks() throws IOException {
         File prankDir = new File("ressource/Spam Messages");
-        this.prankList = new ArrayList<String>();
+        this.prankList = new ArrayList<Prank>();
 
         if(prankDir.exists()){
             File[] files = prankDir.listFiles();
@@ -20,7 +20,7 @@ public class Pranks {
                 for (File file : files) {
                     if (file.isFile()){
                         Prank temp = new Prank(file);
-                        this.prankList.add(temp.getPrank());
+                        this.prankList.add(temp);
                     }
                 }
             } else {
@@ -32,7 +32,7 @@ public class Pranks {
 
     }
 
-    public ArrayList<String> getPrankList() {
+    public ArrayList<Prank> getPrankList() {
         return prankList;
     }
 }

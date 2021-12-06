@@ -5,10 +5,9 @@ import java.util.ArrayList;
 
 public class PranksTest {
     public static void main(String[] args) throws IOException {
-        Pranks test = new Pranks();
-        ArrayList<String> tmp = test.getPrankList();
+        ArrayList<Prank> test = new Pranks().getPrankList();
 
-        for (String s : tmp){
+        for (Prank s : test){
             System.out.println(s);
             System.out.println("//////////////////////////////////////");
         }
