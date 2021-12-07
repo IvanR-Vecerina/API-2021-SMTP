@@ -1,18 +1,19 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Mail {
     private ArrayList<String> to;
+    private ArrayList<String> cc;
     private String from;
-    private String cc;
     private String subject;
     private String message;
 
-    public Mail(String from, ArrayList<String> to, String cc, String subject, String message) {
+    public Mail(String from, ArrayList<String> to, String[] cc, String subject, String message) {
         this.from    = from;
         this.to      = to;
-        this.cc      = cc;
+        this.cc      = new ArrayList<>(Arrays.asList(cc));
         this.subject = subject;
         this.message = message;
     }
@@ -25,7 +26,7 @@ public class Mail {
         return to;
     }
 
-    public String getCc() {
+    public ArrayList<String> getCc() {
         return cc;
     }
 
@@ -40,16 +41,20 @@ public class Mail {
     @Override
     public String toString() {
 
-        String tmp = "";
+        String tmpTo = "";
+        String tmpCc = "";
 
         for (String s : this.to)
-            tmp+= s + ",";
+            tmpTo += s + ",";
+
+        for (String s : this.cc)
+            tmpCc += s + ",";
 
         return "Mail:\n" +
                 "{\n" +
-                "sender:     " + from + "\n" +
-                "recipients: " + tmp + "\n" +
-                "cc:         " + cc + "\n" +
+                "sender:     " + from    + "\n" +
+                "recipients: " + tmpTo   + "\n" +
+                "cc:         " + tmpCc   + "\n" +
                 "subject:    " + subject + "\n" +
                 "content:\n"   + message + "\n" +
                 '}';

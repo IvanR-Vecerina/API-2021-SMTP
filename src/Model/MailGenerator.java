@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class MailGenerator {
-    static public ArrayList<Mail> generate(int nbMails, String witness) throws IOException {
+    static public ArrayList<Mail> generate(int nbMails, String[] witness) throws IOException {
         ArrayList<Mail>   mailList = new ArrayList<>();
         MailRessourcePool dataPool = new MailRessourcePool();
 
