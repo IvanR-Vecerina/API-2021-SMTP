@@ -1,4 +1,4 @@
-package Config;
+package MailBot.Config;
 
 import java.io.*;
 import java.util.Properties;

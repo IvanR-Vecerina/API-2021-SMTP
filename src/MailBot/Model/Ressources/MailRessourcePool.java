@@ -1,6 +1,4 @@
-package Model.Ressources;
-
-import Model.Ressources.*;
+package MailBot.Model.Ressources;
 
 import java.io.IOException;
 import java.util.ArrayList;

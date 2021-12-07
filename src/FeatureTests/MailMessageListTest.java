@@ -1,6 +1,6 @@
-package Tests;
+package FeatureTests;
 
-import Model.Ressources.MailMessagesList;
+import MailBot.Model.Ressources.MailMessagesList;
 
 import java.io.IOException;
 import java.util.ArrayList;

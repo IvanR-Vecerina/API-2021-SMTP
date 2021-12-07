@@ -1,7 +1,7 @@
-package Tests;
+package FeatureTests;
 
-import Model.Mail;
-import Model.MailGenerator;
+import MailBot.Model.Mail;
+import MailBot.Model.MailGenerator;
 
 import java.io.IOException;
 import java.util.ArrayList;

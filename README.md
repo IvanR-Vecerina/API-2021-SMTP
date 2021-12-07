@@ -1,1 +1,1 @@
-# API-2021-SMTP
+# API-2021-MailBot.SMTP

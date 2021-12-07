@@ -1,6 +1,6 @@
-package Model;
+package MailBot.Model;
 
-import Model.Ressources.MailRessourcePool;
+import MailBot.Model.Ressources.MailRessourcePool;
 
 import java.io.IOException;
 import java.util.ArrayList;

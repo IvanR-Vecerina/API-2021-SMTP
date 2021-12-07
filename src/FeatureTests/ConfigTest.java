@@ -1,6 +1,6 @@
-package Tests;
+package FeatureTests;
 
-import Config.ConfigManager;
+import MailBot.Config.ConfigManager;
 
 import java.io.IOException;
 import java.util.Arrays;

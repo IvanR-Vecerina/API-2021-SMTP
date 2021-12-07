@@ -1,6 +1,6 @@
-package SMTP;
+package MailBot.SMTP;
 
-import Model.Mail;
+import MailBot.Model.Mail;
 
 import java.io.*;
 import java.net.Socket;
@@ -21,7 +21,7 @@ public class SMTPClient implements ISMTPClient{
     private String line;
 
     public SMTPClient(String smtpServerAddress, int smtpServerPort){
-        LOG.info("Creating SMTP Client");
+        LOG.info("Creating MailBot.SMTP Client");
         this.smtpServerAddress = smtpServerAddress;
         this.smtpServerPort    = smtpServerPort;
     }
@@ -43,7 +43,7 @@ public class SMTPClient implements ISMTPClient{
         LOG.info(line);
 
         if (!line.startsWith("250")) {
-            throw new IOException("SMTP error: " + line);
+            throw new IOException("MailBot.SMTP error: " + line);
         }
         while (line.startsWith("250-")){
             line = reader.readLine();

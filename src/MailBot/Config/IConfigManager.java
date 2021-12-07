@@ -1,4 +1,4 @@
-package Config;
+package MailBot.Config;
 
 public interface IConfigManager {
 

@@ -1,6 +1,6 @@
-package SMTP;
+package MailBot.SMTP;
 
-import Model.Mail;
+import MailBot.Model.Mail;
 
 import java.io.*;
 

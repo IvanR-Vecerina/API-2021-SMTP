@@ -1,4 +1,4 @@
-package Model.Ressources;
+package MailBot.Model.Ressources;
 
 import java.io.File;
 import java.io.FileNotFoundException;
