@@ -1,8 +1,10 @@
-package Config;
+package Tests;
+
+import Config.Config;
 
 import java.io.IOException;
 
-public class testConfig {
+public class ConfigTest {
     public static void main(String[] args) throws IOException {
         Config cfg = new Config();
 
