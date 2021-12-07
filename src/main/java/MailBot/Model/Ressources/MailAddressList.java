@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class MailAddressList {
     static public ArrayList<String> getAddresses() throws IOException {
-        return getAddresses("ressource/victims.utf8");
+        return getAddresses("src/main/resources/ressource/victims.utf8");
     }
 
     static public ArrayList<String> getAddresses(String filePath) throws IOException {

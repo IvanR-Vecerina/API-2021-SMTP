@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class MailMessagesList {
 
     static public ArrayList<String[]> getMessages() throws IOException {
-        return getMessages("ressource/Spam Messages");
+        return getMessages("src/main/resources/ressource/Spam Messages");
     }
 
     static public ArrayList<String[]> getMessages(String path) throws IOException {

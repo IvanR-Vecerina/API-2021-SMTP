@@ -12,7 +12,7 @@ public class ConfigManager implements IConfigManager {
     public ConfigManager() throws IOException {
         try {
             Properties  config         = new Properties();
-            String      configFileName = "config/config.properties";
+            String      configFileName = "src/main/resources/config/config.properties";
             InputStream is             = new FileInputStream(configFileName);
 
             if (is != null) {
