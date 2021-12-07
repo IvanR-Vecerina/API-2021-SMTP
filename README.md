@@ -119,6 +119,7 @@ The package contains the class `SMTPClient` manages the connection with the SMTP
 
 ### <u>Class Diagram</u>
 
+![test](https://github.com/IvanR-Vecerina/API-2021-SMTP/blob/master/figures/Diagramme%20de%20classes.JPG)
 
 ### <u>Exchange Example</u>
 Server (S:), Client(C:):
