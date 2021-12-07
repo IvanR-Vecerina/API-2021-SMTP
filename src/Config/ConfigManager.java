@@ -3,13 +3,13 @@ package Config;
 import java.io.*;
 import java.util.Properties;
 
-public class Config {
+public class ConfigManager implements IConfigManager {
     private String   serverAddress;
     private int      serverPort;
     private int      nbGroups;
     private String[] witnessEmail;
 
-    public Config() throws IOException {
+    public ConfigManager() throws IOException {
         try {
             Properties  config         = new Properties();
             String      configFileName = "config/config.properties";
@@ -28,7 +28,7 @@ public class Config {
 
             is.close();
         } catch (Exception e) {
-            System.out.println("Exception: " + e);
+            throw new IOException("Exception: " + e);
         }
     }
 

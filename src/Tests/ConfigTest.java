@@ -1,12 +1,12 @@
 package Tests;
 
-import Config.Config;
+import Config.ConfigManager;
 
 import java.io.IOException;
 
 public class ConfigTest {
     public static void main(String[] args) throws IOException {
-        Config cfg = new Config();
+        ConfigManager cfg = new ConfigManager();
 
         System.out.println(cfg.getServerAddress());
         System.out.println(cfg.getServerPort());
