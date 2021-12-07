@@ -31,12 +31,13 @@ You can learn more **[here](https://github.com/tweakers/MockMock)**.
         COPY MockMock-1.4.0.one-jar.jar /opt/app/MockMock.jar
 
         #
-        # Our application will accept TCP connections on port 42069 and web interface on port 8282. Note that the EXPOSE statement
-        # does not make the container accessible via the host. For the container to really be accessible,
-        # we must either use the -p or the -P flag when using the docker run command. With -p, we can
-        # specify an explicit port mapping (and EXPOSE is not even required). With -P, we let Docker 
-        # assign random ports for each EXPOSEd port. We can then use the docker port command to know the port
-        # numbers that have been selected.
+        # Our application will accept TCP connections on port 42069 and web interface on port 8282. 
+        # Note that the EXPOSE statement does not make the container accessible via the host.
+        # For the container to really be accessible,
+        # we must either use the -p or the -P flag when using the docker run command. 
+        # With -p, we can specify an explicit port mapping (and EXPOSE is not even required).
+        # With -P, we let Docker assign random ports for each EXPOSEd port.
+        # We can then use the docker port command to know the port numbers that have been selected.
         #
         EXPOSE 42069
         EXPOSE 8282
@@ -97,3 +98,53 @@ We found it logical to split the program into 3 main packages:
 - Config: handles and manages the configuration.
 - Model:  handles everything related to the Email structure and data.
 - SMTP:   handles everything related to the SMTP protocol and the client.
+
+### <u>Package Config</u>
+The package contains the class `ConfigManager` that reads and store data from the config file.
+
+### <u>Package Model</u>
+The package contains the class `Mail`, the abstract class *`MailGenerator`* and the subpackage `Ressources`.
+
+The class `Mail` contains all the information and data pertaining to the email.
+
+The abstract class *`MailGenerator`* will generate a list of `Mail`, the witness and number of Mails to generate being stored in the `ConfigManager`, based on the data available and stored in the `MailResourcesPool`.
+
+### <u>Package Model.Ressources</u>
+The package contains the class `MailResourcesPool` and the abstract classes *`MailAddressList`* and *`MailMessagesList`*.
+
+The class `MainResourcesPool` stores the data, read by the two abstract classes, into "pools" and will give a random item from the pool when a getter is used.
+
+### <u>Package SMTP</u>
+The package contains the class `SMTPClient` manages the connection with the SMTP setver along with the SMTP exchange.
+
+### <u>Class Diagram</u>
+
+
+### <u>Exchange Example</u>
+Server (S:), Client(C:):
+
+    S: 220 312f37ba0ca6 ESMTP MockMock SMTP Server version 1.4
+    C: EHLO localhost
+    S: 250-312f37ba0ca6
+    S: 250-8BITMIME
+    S: 250 Ok
+    C: MAIL FROM: sender@mail.com
+    S: 250 Ok
+    C: RCPT TO: recipient@mail.com
+    S: 250 Ok
+    C: RCPT TO: witness@mail.com
+    S: 250 Ok
+    C: DATA
+    S: 354 End data with <CR><LF>.<CR><LF>
+    C: From: sender@mail.com
+    C: To: recipient@mail.com
+    C: Cc: witness@mail.com
+    C: Subject: HELLO
+    C:
+    C: Hello World!
+    C: .
+    S: 250 Ok
+    C: QUIT
+    S: 221 Bye
+
+    Connection to host lost.
