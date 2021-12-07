@@ -14,7 +14,7 @@ public class Mail {
         this.from    = from;
         this.to      = to;
         this.cc      = new ArrayList<>(Arrays.asList(cc));
-        this.subject = subject;
+        this.subject = subject.split(": ", 2)[1];
         this.message = message;
     }
 
