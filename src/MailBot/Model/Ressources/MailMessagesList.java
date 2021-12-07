@@ -8,17 +8,39 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
+/**
+ * MailMessageList
+ * This abstract class extracts all the messages from the directory, "ressource/Spam Messages" by default.
+ * @author Ivan Vecerina
+ */
 public class MailMessagesList {
 
+    /**
+     * Directory files data extractor from default path
+     * @return Arraylist of String array containing subject and message body.
+     * @throws IOException if issue with file or directory
+     */
     static public ArrayList<String[]> getMessages() throws IOException {
         return getMessages("ressource/Spam Messages");
     }
 
+    /**
+     * Directory files data extractor from specified path
+     * @param path specified directory to explore
+     * @return Arraylist of String array containing subject and message body.
+     * @throws IOException if issue with file or directory
+     */
     static public ArrayList<String[]> getMessages(String path) throws IOException {
         File directory = new File(path);
         return messageFilesReader(directory);
     }
 
+    /**
+     * Directory files data extractor
+     * @param directory to explore and extract messages from (1 file = 1 message)
+     * @return Arraylist of String array containing subject and message body.
+     * @throws IOException if issue with file or directory
+     */
     static private ArrayList<String[]> messageFilesReader(File directory) throws IOException {
         ArrayList<String[]> messageList = new ArrayList<>();
 
