@@ -102,7 +102,8 @@ public class SMTPClient implements ISMTPClient{
         writer.write("\r\n");
 
         writer.write("Subject: " );
-        writer.write("=?utf-8?B?" + (Base64.getEncoder().encodeToString(m.getSubject().getBytes(StandardCharsets.UTF_8))) + "?=");
+        writer.write("=?utf-8?B?");
+        writer.write(Base64.getEncoder().encodeToString(m.getSubject().getBytes(StandardCharsets.UTF_8)));
         writer.write("\r\n");
         writer.flush();
 
@@ -127,10 +128,8 @@ public class SMTPClient implements ISMTPClient{
     }
 
     public void closeConnection() throws IOException {
-        LOG.info("Closing connection");
         writer.close();
         reader.close();
         socket.close();
-        LOG.info("Connection closed");
     }
 }
