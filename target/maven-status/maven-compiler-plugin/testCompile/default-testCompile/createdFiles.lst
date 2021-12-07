@@ -1,0 +1,4 @@
+FeatureTests\ConfigTest.class
+FeatureTests\MailMessageListTest.class
+FeatureTests\MailAddressListTest.class
+FeatureTests\MailTest.class

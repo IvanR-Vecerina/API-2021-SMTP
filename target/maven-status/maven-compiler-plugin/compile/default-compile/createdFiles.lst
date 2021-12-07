@@ -1,0 +1,10 @@
+MailBot\Model\Ressources\MailRessourcePool.class
+MailBot\Config\ConfigManager.class
+MailBot\MailBot.class
+MailBot\SMTP\SMTPClient.class
+MailBot\Model\Mail.class
+MailBot\SMTP\ISMTPClient.class
+MailBot\Model\MailGenerator.class
+MailBot\Config\IConfigManager.class
+MailBot\Model\Ressources\MailAddressList.class
+MailBot\Model\Ressources\MailMessagesList.class
