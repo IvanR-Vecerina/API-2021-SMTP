@@ -7,8 +7,8 @@ MockMock is a cross-plateform mock SMTP server built on Java coupled with a web 
 
 You can learn more **[here](https://github.com/tweakers/MockMock)**.
 
-## **How to setup you mock SMTP server with docker**
-1. Clone MockMock from the link above and intall docker.
+## **How to setup your mock SMTP server with docker**
+1. Clone MockMock from the link above and install docker.
 2. Build the executable jar file from the source file of the clone mockmock
 
         mvn clean install --file "<path>\MockMock\pom.xml"
