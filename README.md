@@ -19,7 +19,7 @@ You can learn more **[here](https://github.com/tweakers/MockMock)**.
 
 4. Build the Docker image locally
 
-        docker build --tag <yourInput>/mockmock
+        docker build --tag <yourInput>/mockmock .
 
 5. Setup your dockerfile as below (that's an example feel free to pick your own ports)
 
